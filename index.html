@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	</head>
+
+
+	<div class="container js-instance">
+	  <section class="demo-section">
+		<h1 class="center flow-text">Elements</h1>
+		
+		<div class="form__item">
+		  <input type="text" v-model="name" class="form__field center flow-text" placeholder="Add an element" />
+		<button class="waves-effect waves-light btn" v-on:click="add">Add</button>
+		</div>
+		<p class="center flow-text" v-if="error.length > 0">Element is not valid</p>
+		<ul class="collection">
+			<own-element v-if="elements.length" v-for="(element, index) in elements" v-bind:element="element" v-bind:index="index" v-bind:removeitem="removeitem"></own-element>
+		</ul>
+		<p class="flow-text" v-if="!elements.length">Add an element</p>
+		
+	  </section>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./js/elements.js"></script>
+</html> 
